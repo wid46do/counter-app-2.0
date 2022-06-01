@@ -21,6 +21,6 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           args: deploy --dir=build --prod
-          heroku_api_key: ${{ 6b7dfe9a-60f6-43d6-9e87-4d2fb4abd76d }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: 'counterappruben'
           heroku_email: 'rubenemmanuel2000w@gmail.com'
