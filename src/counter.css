@@ -1,0 +1,11 @@
+body {
+    background-color: azure;
+}
+
+.number p {
+    font-size: 100px;
+}
+
+.counter-app {
+    margin-top: 100px;
+}
