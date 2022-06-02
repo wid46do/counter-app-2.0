@@ -3,7 +3,7 @@ name: Production workflow
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 17.x
       - run: npm install
+      - run: npm run test
       - run: npm run build --if-present
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
