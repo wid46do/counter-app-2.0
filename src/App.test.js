@@ -25,8 +25,14 @@ describe("UI Test", () => {
     expect(headerEl.textContent).toBe('Counter App');
   });
 
-  //Make sure the button text = increment
-  //Make sure the button text = decrement
+  // Make sure the button text = increment
+  test('button render with correct label', () => {
+    const incEl = screen.getByTestId('increment-test')
+    expect(incEl.textContent).toBe('increment')
+    //Make sure the button text = decrement
+    // const decEl = screen.getByLabelText('decrement')
+    // expect(decEl.textContent).toBe('decrement')
+  })
 })
 
 describe("Functional Test", () => {
@@ -43,6 +49,16 @@ describe("Functional Test", () => {
   })
 
   //Decrement
+  test(`Test on decrement button adds 1 to the counter`, () => {
+    const decButton = screen.getByTestId('dec-test')
+    const counterEl = screen.getByTestId('counter')
+
+    for(let i = 0; i>clicked; i--) {
+      fireEvent.click(decButton)
+    }
+
+    expect(counterEl.textContent).toBe('0')
+  })
 })
 
 
